@@ -15,7 +15,11 @@ let gameFrame = 0;
 class Enemy {
     constructor(){
         this.image = new Image();
+<<<<<<< HEAD
         this.image.src = './assets/enemy1.png';
+=======
+        this.image.src = './assets/enemy2.png';
+>>>>>>> bacae72 (Create Sprite sheet for enemy movement)
         this.speed = Math.random() * 4 + 1;
         this.spriteWidth = 266;
         this.spriteHeight = 188;
@@ -25,12 +29,24 @@ class Enemy {
         this.y = Math.random() * (canvas.height - this.height);
         this.frame = 0;
         this.flapSpeed = Math.floor(Math.random() * 3 + 1);
+<<<<<<< HEAD
     }
 
     update(){
         this.x += this.speed;
         this.y +=  this.curve * Math.sin(this.angle); 
         // this.angle += this.angleSpeed;
+=======
+        this.angle = 0;
+        this.angleSpeed = Math.random() * 0.2;
+        this.curve = Math.random() * 7;
+    }
+
+    update(){
+        this.x -= this.speed;
+        this.y +=  this.curve * Math.sin(this.angle); 
+        this.angle += this.angleSpeed;
+>>>>>>> bacae72 (Create Sprite sheet for enemy movement)
         if (this.x + this.width < 0){
             this.x = canvas.width;
         }
